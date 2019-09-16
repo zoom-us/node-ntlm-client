@@ -8,9 +8,9 @@ export interface NtlmType2Msg {
 }
 
 export interface NtlmClient {
-  createType1Message: (workstation: string, target: string) => string;
+  createType1Message: (workstation?: string, domain?: string) => string;
   decodeType2Message: (str: string) => NtlmType2Msg;
-  createType3Message: (type2Message: NtlmType2Msg, username: string, password: string, workstation?: string, target?: string) => string;
+  createType3Message: (type2Message: NtlmType2Msg, username: string, password: string, workstation?: string, domain?: string) => string;
 }
 
 declare var ntlmClient: NtlmClient;
